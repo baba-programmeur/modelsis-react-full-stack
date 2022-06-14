@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="card shadow mb-9">
+    <div class="card-body">
+    <table style="width:100%" class="table ">
+     <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Type </th>
+          <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let produit of produits; let i =index">
+          <td>{{produit[0]}} </td>
+          <td>{{produit[1]}}</td>
+          <td>{{currentDate | date:'dd/MM/yyyy'}}</td>
+          <td>{{produit[2]}}</td>
+         
+     <td><a class="btn btn-success" [routerLink]="['/updateProduit', produit.id]">Edit</a></td>      </tr>
+    
+     </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+    <div>
+
+      <div> <button type="submit" class="mt-2" (click)="routerProduct()">Add</button>
+
+        <button type="submit" class="mt-2" (click)="routerType()">add Type</button>
+    </div>
